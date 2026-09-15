@@ -1,0 +1,10 @@
+import fs from 'fs';
+
+const data = fs.readFileSync('bundle.js', 'utf8');
+const regex = /TAXONOMY & GROUPS/i;
+const match = regex.exec(data);
+if (match) {
+  console.log('found:', data.substring(Math.max(0, match.index - 2000), match.index + 2000));
+} else {
+  console.log('not found');
+}

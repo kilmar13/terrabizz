@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Terrabiz | THE POWERFUL INVENTORY MANAGEMENT</title>
+    <script>
+      // Emergency Rollback: Clear Supabase session on first load if coming from migration
+      if (!localStorage.getItem('fb_restored_v1')) {
+        localStorage.clear();
+        document.cookie.split(";").forEach(function(c) { 
+          document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+        });
+        localStorage.setItem('fb_restored_v1', 'true');
+        console.log('Terrabiz: System rollback initiated. Local storage cleared.');
+      }
+    </script>
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/jpeg" href="/terrabiz.jpg" />
+    <link rel="apple-touch-icon" href="/terrabiz.jpg" />
+    <script src="/api/firebase-config.js"></script>
+    <script type="module" crossorigin src="/assets/index-MguF50se.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-49lMMjFL.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration failed', err));
+        });
+      }
+    </script>
+  </body>
+</html>
+

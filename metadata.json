@@ -1,0 +1,6 @@
+{
+  "name": "Terrabiz",
+  "description": "Modern SaaS Inventory, POS, CRM, and Business Operations Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
